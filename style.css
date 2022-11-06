@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  --fs-font-roboto: 'Roboto', sans-serif;
+}
+body {
+  background-color: #121214;
+  background-image: url(./logo/Property\ 1=Yellow.svg);
+  background-position-x: center;
+  background-position-y: -75.1rem;
+  font-family: var(--fs-font-roboto);
+}
+#app {
+  width: fit-content;
+  margin: 5.2rem auto 10rem;
+}
+header {
+  margin-bottom: 6.2rem;
+  text-align: center;
+}
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.cards {
+  text-align: center; 
+  background: #1D1C19;
+  border-bottom: 2px solid #F7DD43;
+  border-radius: 6px;
+  padding: 3.2rem 2.3rem;
+}
+.cards h2 {
+  color: #F7DD43;
+  display: flex;
+  gap: 1.6rem;
+  border: 1px solid #746615;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: fit-content;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: 5.3rem;
+}
+.cards h2 span {
+  color: #E1E1E6;
+}
+.cards ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+/*adicionado o gap entre a border-top*/
+.cards ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 27rem;
+}
+.cards  ul li + li {
+  padding-top: 2.4rem;
+  border-top: 1px solid #323238;
+}
+
+ul li strong {
+  font-family: var(--fs-font-roboto);
+  color: #E1E1E6;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 125%;
+}
+.cards ul li strong:hover, 
+.cards ul  li img:hover {
+  transform: scale(1.1);
+}
+.cards ul li strong, 
+.cards ul  li img{
+  transition: transform .3s;
+}
+ul {
+  list-style: none;
+}
+
+/*animações com @keyframes*/
+.cards {
+  animation: appear .3s;
+}
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/*responsividade*/
+@media (max-width: 700px) {
+body {
+  background-color: #121214;
+  background-image: url(./logo/blue.svg);
+}
+.cards h2 {
+   border: 2px solid #338AF3;
+}
+.cards {
+   border-bottom: 2px solid #338AF3;
+}
+}
+@media (min-width: 700px) {
+  #cards {
+/*700 para cima vai aceitar o tamanho da caixa #cardas até 670px*/
+    max-width: 670px;
+/*vai mudar a direção para um ao lado do outro*/
+    flex-direction: row;
+/*em seguida vai conferiri se não estiver "transbordando a caixa se tiver jogue o #cards para baixo"*/
+    flex-wrap: wrap;
+  }
+}
